@@ -2,7 +2,7 @@ import { getDefaultNormalizer } from '@testing-library/react';
 import React, { useContext, useState } from 'react';
 import { UserContext } from '../../contexts/UserContext';
 import { createUserDocumentFromAuth, signInWithGooglePopup, signInWithUserEmailAndPassword } from '../../utils/firebase/firebase';
-import Button from '../button/Button';
+import Button, {BUTTON_TYPE_CLASSES} from '../button/Button';
 import FormInput from '../form-input/FormInput';
 import './SignInForm.scss';
 
@@ -57,7 +57,7 @@ const SignInForm = () => {
         <FormInput label={`Password`} type='password' onChange={handleChange} name='password' value={password} required />
         <div className='buttons-container'>
           <Button onClick={handleSubmit} type='submit' >Sign In</Button>
-          <Button type='button' buttonType={`google`} onClick={signInWithGoogle}>Google sign in</Button>
+          <Button type='button' buttonType={BUTTON_TYPE_CLASSES.google} onClick={signInWithGoogle}>Google sign in</Button>
         </div>
       </form>
     </div>
